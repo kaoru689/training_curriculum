@@ -19,7 +19,9 @@ class CalendarsController < ApplicationController
   end
 
   def getWeek
+    day = new Date() ;
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
+    @wday = "（" + wday[ day.getDay() ] + "）" ;
 
     # Dateオブジェクトは、日付を保持しています。下記のように`.today.day`とすると、今日の日付を取得できます。
     @todays_date = Date.today
